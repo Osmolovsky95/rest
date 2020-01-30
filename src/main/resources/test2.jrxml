@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.11.0.final using JasperReports Library version 6.11.0-0c4056ccaa4d25a5a8c45672d2f764ea3498bebb  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="test2" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="88b3a564-7cd8-4fef-b518-4f7c4e48e72b">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<style name="Style1" fontName="MyFont"/>
+	<subDataset name="answers" uuid="82344390-f272-49a7-9ce8-cfff5063c1b1">
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="New Data Adapter "/>
+		<queryString>
+			<![CDATA[]]>
+		</queryString>
+		<field name="id" class="java.lang.String"/>
+		<field name="text" class="java.lang.String"/>
+	</subDataset>
+	<subDataset name="students" uuid="cda7532d-dc9b-4895-8641-5ccea85d0e51">
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+		<queryString>
+			<![CDATA[]]>
+		</queryString>
+		<field name="id" class="java.lang.String"/>
+		<field name="name" class="java.lang.String"/>
+		<field name="answer" class="java.lang.String"/>
+	</subDataset>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="goodAnswer" class="java.lang.Long"/>
+	<field name="text" class="java.lang.String"/>
+	<field name="id" class="java.lang.Long"/>
+	<field name="answers" class="java.util.List"/>
+	<field name="students" class="java.util.List"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<pageHeader>
+		<band height="50" splitType="Stretch">
+			<textField>
+				<reportElement x="240" y="30" width="290" height="20" uuid="8ab8eaab-18a0-467a-94e3-cca5a2d77602"/>
+				<box padding="2">
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{text}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="30" y="9" width="43" height="21" uuid="d22607df-fb7b-4c1d-ae6a-95495154b3e7"/>
+				<box padding="2">
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[id:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="30" y="30" width="43" height="20" uuid="313f66b3-2901-4bd9-9ff9-00eea6185ecb"/>
+				<box padding="2">
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{id}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="671" y="9" width="88" height="21" uuid="4cc7e11e-e629-44d9-8e71-2559082a867e"/>
+				<box padding="2">
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Answer:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="671" y="30" width="88" height="20" uuid="2799bc6a-16d2-4703-b091-6047a7d1546d"/>
+				<box padding="2">
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{goodAnswer}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="240" y="9" width="290" height="21" uuid="f9d3d5e2-ab52-4f42-b16d-305028d567d1"/>
+				<box padding="2">
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font fontName="Arial"/>
+				</textElement>
+				<text><![CDATA[Question:]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="54" splitType="Stretch">
+			<textField>
+				<reportElement x="30" y="0" width="309" height="20" uuid="53e829cb-ba63-4cb1-9a21-037cdb9b3b47"/>
+				<box padding="2">
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA["Question"]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="339" y="20" width="103" height="19" uuid="67a30b64-ea3a-4e04-87d4-d55e2f5b01ee"/>
+				<box padding="2">
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[id]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="442" y="20" width="228" height="19" uuid="4e134b84-baee-494f-ab28-3282881f18da"/>
+				<box padding="2">
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="670" y="20" width="90" height="19" uuid="c143bb0c-4eb7-4808-b1fb-391f74a85a2e"/>
+				<box padding="2">
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[answer]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="30" y="20" width="140" height="19" uuid="256b272e-139e-4ce7-a4a8-b5ab89e1fe17"/>
+				<box padding="2">
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[idAnswer:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="170" y="20" width="169" height="19" uuid="60e0555d-701d-4033-9452-eb6230c4c241"/>
+				<box padding="2">
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[textAnswer]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="339" y="0" width="420" height="20" uuid="c7ef6929-0bea-4d6d-9b8d-3c5daa27f00a"/>
+				<box padding="2">
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Students]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="200" splitType="Stretch">
+			<componentElement>
+				<reportElement key="" x="30" y="0" width="309" height="19" uuid="b6864d3c-2fb9-4ac8-9bc8-1378c1334b77"/>
+				<jr:list xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" printOrder="Vertical">
+					<datasetRun subDataset="answers" uuid="9602faea-444f-44c0-9cac-6d855bd93f72">
+						<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{answers})]]></dataSourceExpression>
+					</datasetRun>
+					<jr:listContents height="19" width="309">
+						<textField>
+							<reportElement x="0" y="0" width="160" height="19" uuid="b5f3f6d3-a8b4-4a21-bfb8-1efe943425f9">
+								<property name="com.jaspersoft.studio.unit.height" value="px"/>
+							</reportElement>
+							<box padding="0">
+								<pen lineWidth="0.0" lineStyle="Solid"/>
+							</box>
+							<textElement textAlignment="Center"/>
+							<textFieldExpression><![CDATA[$F{id}]]></textFieldExpression>
+						</textField>
+						<textField textAdjust="StretchHeight">
+							<reportElement stretchType="ElementGroupHeight" x="170" y="0" width="130" height="19" uuid="48289c96-8ec6-4ae6-a3bc-9fe6fb2c9d73">
+								<property name="com.jaspersoft.studio.unit.width" value="px"/>
+								<property name="com.jaspersoft.studio.unit.height" value="px"/>
+							</reportElement>
+							<box padding="0">
+								<pen lineWidth="0.0" lineStyle="Solid"/>
+							</box>
+							<textElement textAlignment="Center"/>
+							<textFieldExpression><![CDATA[$F{text}]]></textFieldExpression>
+						</textField>
+					</jr:listContents>
+				</jr:list>
+			</componentElement>
+			<componentElement>
+				<reportElement x="339" y="0" width="419" height="19" uuid="ff7d486d-1d6b-46d6-9c7c-008a9c1cb562"/>
+				<jr:list xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" printOrder="Vertical">
+					<datasetRun subDataset="students" uuid="42c1e603-aa1b-4fc8-b4d5-625daadb351d">
+						<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{students})]]></dataSourceExpression>
+					</datasetRun>
+					<jr:listContents height="19" width="419">
+						<textField>
+							<reportElement x="0" y="0" width="103" height="19" uuid="ff8af076-8c75-4f3f-819f-8474e18ced90">
+								<property name="com.jaspersoft.studio.unit.width" value="px"/>
+								<property name="com.jaspersoft.studio.unit.height" value="px"/>
+							</reportElement>
+							<textElement textAlignment="Center"/>
+							<textFieldExpression><![CDATA[$F{id}]]></textFieldExpression>
+						</textField>
+						<textField textAdjust="StretchHeight">
+							<reportElement stretchType="ElementGroupHeight" x="103" y="0" width="228" height="19" uuid="e5954e9b-c597-4e23-ba53-61153b029178">
+								<property name="com.jaspersoft.studio.unit.width" value="px"/>
+								<property name="com.jaspersoft.studio.unit.height" value="px"/>
+							</reportElement>
+							<textElement textAlignment="Center"/>
+							<textFieldExpression><![CDATA[$F{name}]]></textFieldExpression>
+						</textField>
+						<textField>
+							<reportElement x="330" y="0" width="88" height="18" uuid="72457e5f-34c9-453c-b67a-6123205c3c59"/>
+							<textElement textAlignment="Center"/>
+							<textFieldExpression><![CDATA[$F{answer}]]></textFieldExpression>
+						</textField>
+					</jr:listContents>
+				</jr:list>
+			</componentElement>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="100" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
