@@ -1,23 +1,20 @@
 package controllers;
 
-import data.question.Question;
-import data.student.Student;
+import data.AssessmentSet;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
-import service.StudentService;
+import service.SetStudentAnswer;
 import test.Context;
 
 @Controller
 @RequestMapping(value = "/testing")
-public class Test {
+public class TestController {
 
     @RequestMapping(value = "/test/",method = RequestMethod.POST,headers = {"Content-type=application/json"})
     @ResponseStatus(HttpStatus.OK)
-    public void deleteStudentJSON(@RequestBody Student student,Question question, String answer){
-        System.out.println(student);
-        System.out.println(question);
-        System.out.println(answer);
+    public void testGoJSON(@RequestBody AssessmentSet assessmentSet){
+        Context.getInstance().getBean("setStudentAnswer", SetStudentAnswer.class).setAnswer(assessmentSet);
     }
 
 }

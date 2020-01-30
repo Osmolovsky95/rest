@@ -1,6 +1,5 @@
 package config;
 
-import dao.AssessmentSetter;
 import dao.spring.AnswerSpringDAO;
 import dao.spring.QuestionSpringDAO;
 import dao.spring.StudentSpringDAO;
@@ -16,6 +15,7 @@ import org.springframework.context.annotation.Scope;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import service.QuestionService;
+import service.SetStudentAnswer;
 import service.StudentService;
 
 @Configuration
@@ -46,11 +46,6 @@ public class Config {
     @Bean
     public StudentSpringDAO studentSpringDAO(){
         return new StudentSpringDAO(jdbcTemplate());
-    }
-
-    @Bean
-    public AssessmentSetter assessmentSetter(){
-        return new AssessmentSetter(jdbcTemplate());
     }
 
     @Bean
@@ -86,6 +81,11 @@ public class Config {
     @Bean
     public IReportCreator pdfCreator(){
         return new PDFCreator();
+    }
+
+    @Bean
+    public SetStudentAnswer setStudentAnswer(){
+        return new SetStudentAnswer();
     }
 }
 

@@ -1,6 +1,7 @@
 package dao.spring;
 
 
+import data.AssessmentSet;
 import data.student.GroupStudents;
 import data.student.Student;
 import org.springframework.dao.DuplicateKeyException;
@@ -48,7 +49,6 @@ public class StudentSpringDAO {
                 break;
             }
         }
-        //Context.getInstance().getBean("loaderStudentsSpringDAO", LoaderStudentsSpringDAO.class).load();
         return result;
     }
 
@@ -60,5 +60,19 @@ public class StudentSpringDAO {
              listAssessment.add((double)assessmenttt.get("assessment"));
          }
         return listAssessment;
+    }
+
+    public boolean setStudentAnswer(AssessmentSet assessmentSet){
+        boolean result;
+        try{
+        String sql="INSERT INTO studentAnswers (student_id,question_id,answer_id) VALUES (?,?,?)";
+        jdbcTemplate.update(sql,assessmentSet.getStudent().getId(),assessmentSet.getQuestion().getId(),Integer.parseInt(assessmentSet.getAnswer()));
+        result=true;
+        }
+        catch (Throwable e){
+            e.printStackTrace();
+            result = false;
+        }
+        return result;
     }
 }
