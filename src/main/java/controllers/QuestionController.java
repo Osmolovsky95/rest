@@ -1,14 +1,18 @@
 package controllers;
 
+import data.Message;
 import data.question.Question;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import service.QuestionService;
+import test.Context;
+
 
 @Controller
-public class QuestionController {
+    public class QuestionController {
     private QuestionService questionService;
+
 
     public QuestionController(QuestionService questionService) {
         this.questionService = questionService;
@@ -17,9 +21,12 @@ public class QuestionController {
     @RequestMapping(value = "/question",method = RequestMethod.POST,headers = {"Content-type=application/json"})
     @ResponseStatus(HttpStatus.CREATED)
     @ResponseBody
-    public Question createQuestion(@RequestBody Question question) {
-      question =  questionService.createQuestion(question);
-      return question;
+    public Message createQuestion(@RequestBody Question question) {
+        Message message = Context.getInstance().getBean("message",Message.class);
+        question = questionService.createQuestion(question);
+        message.setText(question.getQuestion());
+        message.setId(question.getId());
+      return message;
     }
 
     @RequestMapping(value = "/question/{id}",method = RequestMethod.GET,headers = {"Content-type=application/json"})
